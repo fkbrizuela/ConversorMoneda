@@ -19,7 +19,7 @@ public class Main {
     }
 
     public static String[][] monedas = {
-            { "USD", "Dólar" },
+            { "USD", "Dolar" },
             { "ARS", "Peso argentino" },
             { "BRL", "Real" },
             { "EUR", "Euro" },
@@ -58,7 +58,7 @@ public class Main {
         BigDecimal valorA;
         while (true) {
             try {
-                String val = readLine("Tipee el monto a convertir, o \"salir\" para salir de la aplicación: ");
+                String val = readLine("Tipee el monto a convertir, o \"salir\" para salir de la aplicacion: ");
 
                 if (Objects.equals(val, "salir"))
                     System.exit(0);
@@ -66,14 +66,14 @@ public class Main {
                 valorA = new BigDecimal(val);
                 break;
             } catch (Exception ignored) {
-                System.out.println("Datos inválidos.");
+                System.out.println("Datos invalidos.");
             }
         }
 
         String monedaB;
         while (true) {
             try {
-                String val = readLine("Seleccione la moneda a la cual convertir, o " + (monedas.length + 1) + " para salir de la aplicación: ");
+                String val = readLine("Seleccione la moneda a la cual convertir, o " + (monedas.length + 1) + " para salir de la aplicacion: ");
                 int nval = Integer.parseInt(val);
 
                 if (nval == monedas.length + 1)
@@ -91,7 +91,7 @@ public class Main {
             System.out.println(valorA + " " + monedaA + " = " + valorA.multiply(exchange_rate) + " " + monedaB);
             System.exit(0);
         } catch (ArithmeticException e) {
-            System.out.println("Se produjo un error durante el cálculo: " + e.getLocalizedMessage());
+            System.out.println("Se produjo un error durante el calculo: " + e.getLocalizedMessage());
             System.exit(2);
         } catch (Exception e) {
             System.out.println("Error consultando ExchangeRate-API: " + e.getLocalizedMessage());
